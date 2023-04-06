@@ -7,7 +7,7 @@ app.get('/', async (req, res) => {
         res.status(400).send(`Missing authorization header.`);
     }
 
-    const authToken = req.headers.authorization.split('Bearer')[1];
+    const authToken = req.headers.authorization.split('Bearer ')[1];
     const spotify = new SpotifyWebApi();
     spotify.setAccessToken(authToken);
 
